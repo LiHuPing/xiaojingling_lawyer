@@ -72,7 +72,8 @@
 					onFail: (error) => {
 						this.$vux.loading.hide()
 						this.toastError(error.msg)
-					}
+					},
+					router: this.$router
 				})
 			},
 			
@@ -101,7 +102,8 @@
 					onFail: (error) => {
 						this.$vux.loading.hide()
 						this.toastError(error.msg)
-					}
+					},
+					router: this.$router
 				})
 			}
 		},

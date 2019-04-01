@@ -18,7 +18,7 @@
 				<div v-html="send_second_list.answer || '--'"></div>
 			</div>
 		</div>
-		<ft-button type="default" @click.native="$router.push({ path: '/' })" class="mart15">返 回</ft-button>
+		<ft-button type="default" @click.native="$router.push({ path: '/?select=done' })" class="mart15">返 回</ft-button>
   </div>
 </template>
 
@@ -70,7 +70,8 @@
 					onFail: (error) => {
 						this.$vux.loading.hide()
 						this.toastError(error.msg)
-					}
+					},
+					router: this.$router
 				})
 			}
 		},

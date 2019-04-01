@@ -34,7 +34,7 @@
 		name: 'Index',
 		data () {
 			return {
-				active: "wait",
+				active: this.$route.query.select || "wait",
 				waitList: [],
 				waitCurrentPage: 1,
         doneList: [],
@@ -81,7 +81,8 @@
 							type: 'text',
 							text: error.msg
 						})
-					}
+					},
+					router: this.$router
 				})
 			},
 			
@@ -117,7 +118,8 @@
 							type: 'text',
 							text: error.msg
 						})
-					}
+					},
+					router: this.$router
 				})
 			}
 		},
@@ -141,6 +143,7 @@
       active (val, oldVal) {
         if (val !== oldVal) {
           this.refresh()
+					this.$router.push({ query: { select: ({ wait: "wait", done: "done" })[val] } })
         }
       }
     },
