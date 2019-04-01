@@ -1,0 +1,15 @@
+@import "../../base/fn";
+
+.@{cssPrefix}-btn_disabled {
+    color: @ftBtnDisabledFontColor;
+    &.@{cssPrefix}-btn_default {
+        color: @ftBtnDefaultDisabledFontColor;
+        background-color: @ftBtnDefaultDisabledBg;
+    }
+    &.@{cssPrefix}-btn_primary {
+        background-color: @ftBtnPrimaryDisabledBg;
+    }
+    &.@{cssPrefix}-btn_warn {
+        background-color: @ftBtnwarnDisabledBg;
+    }
+}

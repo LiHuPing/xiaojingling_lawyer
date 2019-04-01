@@ -1,0 +1,38 @@
+@import "fn";
+
+html {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    font-size: 100px;
+}
+
+@media only screen and (max-width:360px){
+	html{
+		font-size:85px!important;
+	}
+}
+
+body {
+    line-height: 1.6;
+    font-family: @ftFontDefault;
+    background-color: @ftBgColorDefault;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a img {
+    border: 0;
+}
+
+a {
+    text-decoration: none;
+    .setTapColor();
+}
+
+.g-fix-ios-overflow-scrolling-bug {
+    /* 针对IOS 修复 css overflow scroll bug */
+    -webkit-overflow-scrolling: auto !important;
+  }

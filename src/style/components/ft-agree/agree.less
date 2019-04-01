@@ -1,0 +1,60 @@
+@import "../../base/fn";
+
+.@{cssPrefix}-agree{
+    display: block;
+    padding: .5em 15px;
+    font-size: 12px;
+    text-align: center;
+    a{
+        color: #999;
+    }
+}
+.@{cssPrefix}-agree_text{
+    color: @ftTextColorGray;
+}
+.@{cssPrefix}-agree_checkbox{
+    appearance: none;
+    outline: 0;
+    font-size: 0;
+
+    border: 1px solid #D1D1D1;
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    width: 16px;
+    height: 16px;
+    position: relative;
+
+    vertical-align: 0;
+    top: 4px;
+
+    &:checked{
+        border: 1px solid #007AFF;
+        background-color: #007AFF;
+        &:before{
+            font-family: "ftui";
+            font-style: normal;
+            font-weight: normal;
+            font-variant: normal;
+            text-transform: none;
+            text-align: center;
+            speak: none;
+            display: inline-block;
+            vertical-align: middle;
+            text-decoration: inherit;
+            content: "\EA08";
+            color: #FFFFFF;
+            font-size: 13px;
+
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-48%) scale(.73);
+        }
+    }
+    &:disabled{
+        background-color:#E1E1E1;
+        &:before{
+            color:#ADADAD;
+        }
+    }
+}

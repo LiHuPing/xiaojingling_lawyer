@@ -1,0 +1,16 @@
+@import "../../base/fn";
+
+.@{cssPrefix}-btn_loading{
+	.@{cssPrefix}-loading{
+		margin:-.2em .34em 0 0;
+	}
+    &.@{cssPrefix}-btn_primary, &.@{cssPrefix}-btn_warn {
+        color: @ftBtnActiveFontColor;
+    }
+	&.@{cssPrefix}-btn_primary{
+        background-color: @ftBtnPrimaryActiveBg;
+	}
+	&.@{cssPrefix}-btn_warn{
+        background-color: @ftBtnWarnActiveBg;
+	}
+}

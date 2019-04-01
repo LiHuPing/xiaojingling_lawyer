@@ -1,0 +1,31 @@
+@import "../../base/fn";
+@import "tabbar";
+@import "navbar";
+
+.@{cssPrefix}-tab {
+  position: relative;
+  height: 100%;
+}
+
+.@{cssPrefix}-tab-container {
+  /* overflow: hidden; */
+  position: relative;
+
+  &-item{
+    flex-shrink: 0;
+    width: 100%;
+    height: 100vh;
+    box-sizing: border-box;
+  }
+}
+
+
+/* .@{cssPrefix}-tab_panel {
+	box-sizing: border-box;
+  
+  overflow: auto;
+		-webkit-overflow-scrolling: touch;
+	}
+ .@{cssPrefix}-tab_content{
+		display: none;
+ } */

@@ -1,0 +1,77 @@
+@import "../../base/fn";
+
+@import "cell-access";
+
+.@{cssPrefix}-cells{
+  background-color: @ftCellBg;
+  line-height: @ftCellLineHeight;
+  font-size: @ftCellFontSize;
+	overflow: hidden;
+
+  /* onepx */
+  position: relative;
+  &:before {
+      z-index: 2;
+  }
+  &:after {
+      z-index: 2;
+  }
+}
+
+.@{cssPrefix}-cells_title {
+  margin-top: .77em; /* 15px - 行高 */
+  margin-bottom: .3em; /* 8px - 行高 */
+  padding-left: @ftCellGapH;
+  padding-right: @ftCellGapH;
+  color: @ftTextColorGray;
+  font-size: @ftCellTipsFontSize;
+
+  & + .@{cssPrefix}-cells {
+      margin-top: 0;
+  }
+}
+
+.@{cssPrefix}-cells_tips {
+  margin-top: .3em; /* 8px - 行高 */
+  color: @ftTextColorGray;
+  padding-left: @ftCellGapH;
+  padding-right: @ftCellGapH;
+  font-size: @ftCellTipsFontSize;
+}
+
+.@{cssPrefix}-cell {
+  padding: @ftCellGapV @ftCellGapH;
+  position: relative; /* 这个是为了兼容cells容器onepx方案被before挡住而做的 */
+  display: flex;
+  align-items: center;
+  &:before {
+      left: @ftCellGapH;
+      z-index: 2;
+  }
+  &:first-child {
+      &:before {
+          display: none;
+      }
+  }
+}
+.@{cssPrefix}-cell_primary{
+  align-items: flex-start;
+}
+.@{cssPrefix}-cell_hd{
+  line-height: 0
+}
+.@{cssPrefix}-cell_bd{
+  overflow-x: auto;
+  flex: 1;
+}
+.@{cssPrefix}-cell_ft {
+  text-align: right;
+}
+.@{cssPrefix}-cell_label{
+  color: @ftTextColorGray;
+  font-size: .12rem;
+}
+.@{cssPrefix}-cell_value{
+  color: #666;
+  font-size: .15rem;
+}

@@ -1,0 +1,29 @@
+@import "../../base/fn";
+
+.@{cssPrefix}-btn_ghost-primary {
+    color: @ftBtnGhostPrimaryColor;
+    border: 1px solid @ftBtnGhostPrimaryBorderColor;
+    &:not(.@{cssPrefix}-btn_ghost-disabled):active {
+        color:@ftBtnGhostPrimaryActiveColor;
+        border-color: @ftBtnGhostPrimaryActiveBorderColor;
+    }
+    &:after {
+        border-width: 0;
+    }
+}
+
+.@{cssPrefix}-btn_ghost-default {
+    color: @ftBtnGhostDefaultColor;
+    border: 1px solid @ftBtnGhostDefaultBorderColor;
+    &:not(.@{cssPrefix}-btn_ghost-disabled):active {
+        color:@ftBtnGhostDefaultActiveColor;
+        border-color: @ftBtnGhostDefaultActiveBorderColor;
+    }
+    &:after {
+        border-width: 0;
+    }
+}
+.@{cssPrefix}-btn_ghost-disabled{
+    color:rgba(0,0,0,.2);
+    border-color:rgba(0,0,0,.2);
+}

@@ -1,0 +1,66 @@
+@import "../../base/fn";
+
+.@{cssPrefix}-tabbar {
+    width: 100%;
+    position: relative;
+    display: flex;
+    min-height: .47rem;
+    align-items: center;
+    background-color: @ftBarBgColor;
+    z-index: 500;
+    &:after {
+      .setTopLine(@ftLineColorDark);
+    }
+
+    &_fixed{
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      z-index: 99
+    }
+  }
+
+  .@{cssPrefix}-tabbar_item {
+    display: block;
+    flex: 1;
+    padding: 5px 0 0;
+    font-size: 0;
+    color: @ftTextColorGray;
+    text-align: center;
+    .setTapColor();
+    &:active{
+        background:  @ftBtnDefaultActiveBg;
+    }
+
+    &.@{cssPrefix}-tabbar_item_on {
+        .@{cssPrefix}-tabbar_icon,
+        .@{cssPrefix}-tabbar_icon > i,
+        .@{cssPrefix}-tabbar_label {
+            color: #09BB07;
+        }
+    }
+}
+
+.@{cssPrefix}-tabbar_icon {
+    display: inline-block;
+    width: 27px;
+    height: 27px;
+
+    i&,
+    > i {
+        font-size: 24px;
+        color: @ftTextColorGray;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.@{cssPrefix}-tabbar_label {
+    text-align: center;
+    color: @ftTextColorGray;
+    font-size: 10px;
+    line-height: 1.8;
+}

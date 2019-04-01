@@ -1,0 +1,148 @@
+@import "../../base/fn";
+
+.@{cssPrefix}-dialog {
+    position: fixed;
+    z-index: 5000;
+    width: 80%;
+    max-width: 300px;
+    top: 50%;
+    left: 50%;
+    font-size: 16px;
+    transform: translate(-50%, -50%);
+
+    background-color: @ftDialogBackgroundColor;
+    text-align: center;
+    border-radius: 3px;
+    overflow: hidden;
+}
+.@{cssPrefix}-dialog_hd {
+    padding: 1em @ftDialogGapWidth .8em;
+		margin-bottom: 15px;
+}
+.@{cssPrefix}-dialog_hd.has-title{
+	border-bottom: 1px solid #eee;
+}
+.@{cssPrefix}-dialog_title {
+    font-weight: 400;
+    font-size: 18px;
+		position: relative;
+}
+.@{cssPrefix}-dialog-close {
+	position:absolute;
+	top: 15px;
+	right: 10px
+}
+.@{cssPrefix}-dialog_bd {
+    padding: 0 @ftDialogGapWidth;
+    min-height: 40px;
+    font-size: 15px;
+    line-height: 1.3;
+    word-wrap: break-word;
+    word-break: break-all;
+    color: @ftTextColorGray;
+    &:first-child{
+        padding:2.7em 20px 1.7em;
+        color:#353535;
+    }
+}
+.@{cssPrefix}-dialog_ft {
+    position: relative;
+    line-height: 48px;
+    font-size: 18px;
+    display: flex;
+		min-height: 15px;
+}
+.@{cssPrefix}-dialog_btn {
+    display: block;
+    flex: 1;
+    background: @ftDialogLinkColor;
+    text-decoration: none;
+		margin:25px;
+		border-radius:24px;
+    .setTapColor();
+    &:active {
+        background-color: @ftDialogLinkActiveBc;
+    }
+
+    position: relative;
+    &:after {
+        content: " ";
+        .setLeftLine(@ftDialogLineColor);
+    }
+    &:first-child {
+        &:after {
+            display: none;
+        }
+    }
+		& + & {
+			margin-left:0;
+		}
+}
+.@{cssPrefix}-dialog_btn_default {
+    color: #353535;
+		background: #fff;
+		border: 1px solid #ddd;
+}
+.@{cssPrefix}-dialog_btn_primary {
+    color: #fff;
+}
+
+.@{cssPrefix}-skin_android{
+    .@{cssPrefix}-dialog {
+        text-align: left;
+        box-shadow: 0 6px 30px 0 rgba(0, 0, 0, .1);
+    }
+    .@{cssPrefix}-dialog_title{
+        font-size: 21px;
+    }
+    .@{cssPrefix}-dialog_hd{
+        text-align: left;
+    }
+    .@{cssPrefix}-dialog_bd{
+        color:@ftTextColorGray;
+        padding:.25em @ftDialogGapWidth 2em;
+        font-size: 17px;
+        text-align: left;
+        &:first-child{
+            padding:1.6em @ftDialogGapWidth 2em;
+            color:#353535;
+        }
+    }
+    .@{cssPrefix}-dialog_ft{
+        display: block;
+        text-align: right;
+        line-height: 42px;
+        font-size: 16px;
+        padding:0 @ftDialogGapWidth .7em;
+        &:after{
+            display: none;
+        }
+    }
+    .@{cssPrefix}-dialog_btn{
+        display: inline-block;
+        vertical-align: top;
+        padding:0 .8em;
+        &:after{
+            display: none;
+        }
+
+        &:active{
+            background-color: rgba(0,0,0,.06);
+        }
+        &:visited{
+            background-color: rgba(0,0,0,.06);
+        }
+        &:last-child{
+            margin-right: -.8em;
+        }
+    }
+    .@{cssPrefix}-dialog_btn_default {
+        color: #808080;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .@{cssPrefix}-dialog {
+        width: 35%;
+    }
+}

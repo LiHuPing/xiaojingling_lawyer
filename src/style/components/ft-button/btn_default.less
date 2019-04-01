@@ -1,0 +1,13 @@
+@import "../../base/fn";
+
+.@{cssPrefix}-btn_default{
+  color: @ftBtnDefaultFontColor;
+  background-color: @ftBtnDefaultBg;
+  &:not(.@{cssPrefix}-btn_disabled):visited {
+    color: @ftBtnDefaultFontColor;
+  }
+  &:not(.@{cssPrefix}-btn_disabled):active {
+      color: @ftBtnDefaultActiveFontColor;
+      background-color: @ftBtnDefaultActiveBg;
+  }
+}

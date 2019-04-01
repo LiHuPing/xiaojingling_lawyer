@@ -1,0 +1,62 @@
+@import "../../base/fn";
+
+@import "btn_global";
+@import "btn_default";
+@import "btn_disabled";
+@import "btn_ghost";
+@import "btn_loading";
+@import "btn_primary";
+@import "btn_warn";
+
+
+button, input {
+  &.@{cssPrefix}-btn {
+      width: 100%;
+      border-width: 0;
+      outline: 0;
+      -webkit-appearance: none;
+      &:focus {
+          outline: 0;
+      }
+  }
+  &.@{cssPrefix}-btn_inline,&.@{cssPrefix}-btn_mini {
+      width: auto;
+  }
+  &.@{cssPrefix}-btn_ghost-primary,&.@{cssPrefix}-btn_ghost-default{
+      border-width: 1px;
+      background-color: @ftBtnDefaultBg;;
+  }
+}
+
+.@{cssPrefix}-btn_mini {
+  display: inline-block;
+  /* line-height: @ftBtnMiniHeight; */
+  font-size: @ftBtnMiniFontSize;
+}
+
+
+/*gap between btn*/
+.@{cssPrefix}-btn + .@{cssPrefix}-btn {
+  margin-top: @ftBtnDefaultGap;
+}
+
+.@{cssPrefix}-btn.@{cssPrefix}-btn_inline + .@{cssPrefix}-btn.@{cssPrefix}-btn_inline {
+  margin-top: auto;
+  margin-left: @ftBtnDefaultGap;
+}
+
+.@{cssPrefix}-btn-area {
+  margin: @ftCellsMarginTop @ftBtnDefaultGap .3em; 
+}
+.@{cssPrefix}-btn-area_inline {
+  display: flex;
+  .@{cssPrefix}-btn {
+      margin-top: auto;
+      margin-right: @ftBtnDefaultGap;
+      width: 100%;
+      flex: 1;
+      &:last-child {
+          margin-right: 0;
+      }
+  }
+}

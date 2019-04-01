@@ -1,0 +1,44 @@
+@import "../../base/fn";
+
+.@{cssPrefix}-collapse{
+  font-size: 14px;
+  position: relative; /* 这个是为了兼容cells容器onepx方案被before挡住而做的 */
+  background: @ftBarBgColor;
+  &:before {
+      .setTopLine(@ftCellBorderColor);
+      left: @ftCellGapH;
+      z-index: 2;
+  }
+  &:first-child {
+      &:before {
+          display: none;
+      }
+  }
+  &-cell{
+    color: #333;
+    display: flex;
+    align-items: center;
+    padding: @ftCellGapV @ftCellGapH;
+    &:after{
+      content: '';
+      position: absolute;
+      margin-top: -3px;
+      right: 16px;
+      border-right: 2px solid #666; 
+      border-bottom: 2px solid #666;  
+      width: 8px; 
+      height: 8px;
+      transition: transform .5s;
+      transform: rotate(45deg);
+    }
+  }
+  &-open{
+    &:after{
+      transform: rotate(225deg);
+    }
+  }
+  &-content{
+    color: #888;
+    padding: @ftCellGapV @ftCellGapH;
+  }
+}

@@ -1,0 +1,12 @@
+@import "../../base/fn";
+
+.@{cssPrefix}-btn_primary {
+    background-color: @ftBtnPrimaryBg;
+    &:not(.@{cssPrefix}-btn_disabled):visited {
+        color: @ftBtnFontColor;
+    }
+    &:not(.@{cssPrefix}-btn_disabled):active {
+        color: @ftBtnActiveFontColor;
+        background-color: @ftBtnPrimaryActiveBg;
+    }
+}
