@@ -6,7 +6,7 @@
 		<p><b>问题内容：</b>{{ send_first_list.content || '--' }}</p>
 		<div v-if="!!send_first_list.answer">
 			<b>问题答案：</b>
-			<div v-html="send_first_list.answer || '--'"></div>
+			<div class="html-container" v-html="send_first_list.answer || '--'"></div>
 		</div>
 		<div v-if="!!send_second_list.in_id" class="anther-quest">
 			<p><b>问题类型：</b>{{ send_second_list.type_txt || '--' }}</p>
@@ -15,7 +15,7 @@
 			<p><b>问题内容：</b>{{ send_second_list.content || '--' }}</p>
 			<div v-if="!!send_second_list.answer">
 				<b>问题答案：</b>
-				<div v-html="send_second_list.answer || '--'"></div>
+				<div class="html-container" v-html="send_second_list.answer || '--'"></div>
 			</div>
 		</div>
 		<ft-button type="default" @click.native="$router.push({ path: '/?select=done' })" class="mart15">返 回</ft-button>

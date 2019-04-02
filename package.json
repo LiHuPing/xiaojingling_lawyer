@@ -8,7 +8,7 @@
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
     "test-build": "node build/test-build.js",
-		"pre-build": "node build/pre-build.js",
+    "pre-build": "node build/pre-build.js",
     "build": "node build/build.js"
   },
   "dependencies": {
@@ -30,6 +30,7 @@
     "classnames": "^2.2.6",
     "copy-webpack-plugin": "^4.0.1",
     "css-loader": "^0.28.0",
+    "element-ui": "^2.7.0",
     "extract-text-webpack-plugin": "^3.0.0",
     "file-loader": "^1.1.4",
     "friendly-errors-webpack-plugin": "^1.6.1",
@@ -54,6 +55,7 @@
     "vue-concise-slider": "^2.5.5",
     "vue-core-image-upload": "^2.4.11",
     "vue-loader": "^13.3.0",
+    "vue-quill-editor": "^3.0.6",
     "vue-scroller": "^2.2.4",
     "vue-style-loader": "^3.0.1",
     "vue-template-compiler": "^2.5.2",

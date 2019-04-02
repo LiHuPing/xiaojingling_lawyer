@@ -12,7 +12,8 @@ const config = {
 		success: [ '0' ],
 		fail: [ '0', '001006' ],
 		expires: [ '001006' ]
-	}
+	},
+	qiniuUploadUrl: "//upload-z1.qiniu.com"
 }
 
 export default config

@@ -6,7 +6,7 @@
 		<p><b>问题内容：</b>{{ send_first_list.content || '--' }}</p>
 		<div v-if="!!send_first_list.answer">
 			<b>问题答案：</b>
-			<div v-html="send_first_list.answer || '--'"></div>
+			<div class="html-container" v-html="send_first_list.answer || '--'"></div>
 		</div>
 		<div v-if="!!send_second_list.in_id" class="anther-quest">
 			<p><b>问题类型：</b>{{ send_second_list.type_txt || '--' }}</p>
@@ -16,9 +16,7 @@
 		</div>
 		<div>
 			<b>问题答案：</b>
-			<textarea v-model="answer" class="quest-record marb15 font-15" placeholder="请输入该问题的答案">
-			
-			</textarea>
+			<quill-editor-qiniu :token="qiniuToken" v-model="answer" :domain="qiniuUploadUrl" :uploadUrl="qiniuUploadUrl"></quill-editor-qiniu>
 		</div>
 		<ft-button type="primary" @click.native="submitHandle">提交</ft-button>
   </div>
@@ -26,7 +24,9 @@
 
 <script>
 	import { mapState, mapActions } from 'vuex'
-	import { Button } from '@/components'
+	import { Button, QuillEditorQiniu } from '@/components'
+	import config from '@/config/config'
+	import md5 from 'md5'
 
 	export default {
 		name: 'AnswerQuestion',
@@ -105,13 +105,34 @@
 					},
 					router: this.$router
 				})
+			},
+			
+			getQiniuToken(){
+				this.fetchCommon({
+					url: '/sysset/token7nu/',
+					data: { 
+						token: md5('XJL_CRM_API'),
+						authType: 'pub'
+					},
+					sign: 'qiniuToken',
+					onSuccess: res => {
+						
+					},
+					onFail: error => {
+						console.log(error.msg)
+					}
+				})
 			}
 		},
 		computed: {
 			...mapState({
         inquiryDetail (state) {
           return state.common['inquiryDetail']
-        }
+        },
+			
+				qiniuToken(state){
+					return state.common.qiniuToken['token_7niu_up']
+				}
       }),
 			
 			send_first_list(){
@@ -120,6 +141,10 @@
 			
 			send_second_list(){
 				return this.inquiryDetail['send_second_list']
+			},
+			
+			qiniuUploadUrl(){
+				return config.qiniuUploadUrl
 			}
 		},
 		watch: {
@@ -127,12 +152,14 @@
     },
 		created(){
 			this.getDetail()
+			this.getQiniuToken()
 		},
 		mounted(){
 			document.title = '待答问题'
 		},
 		components: {
-      [Button.name]: Button
+      [Button.name]: Button,
+			QuillEditorQiniu
     }
 	}
 </script>
