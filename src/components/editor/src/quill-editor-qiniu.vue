@@ -126,6 +126,10 @@
 		watch:{
 				content(newVal, oldVal) {
 					this.$emit('input', newVal);
+				},
+				
+				token(newVal, oldVal){
+					this.qiniuForm.token = newVal
 				}
 		},
 		components: {

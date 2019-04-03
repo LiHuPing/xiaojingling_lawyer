@@ -7,7 +7,7 @@
 		<div class="pad15 bg-fff">
 			<ft-cells style="margin-top:.05rem;">
 				<ft-field placeholder="请输入律师登录名" class="field-cell" :clean="false" v-model="user_name_reg"></ft-field>
-				<ft-field placeholder="请输入登录密码" class="field-cell" :max="16" :clean="false" v-model="password"></ft-field>
+				<ft-field placeholder="请输入登录密码" class="field-cell" type="password" :max="16" :clean="false" v-model="password"></ft-field>
 			</ft-cells>
 		</div>
 		<div class="btn-wrap">

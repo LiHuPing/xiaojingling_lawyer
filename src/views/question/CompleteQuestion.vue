@@ -3,6 +3,7 @@
 		<p><b>问题类型：</b>{{ send_first_list.type_txt || '--' }}</p>
 		<p><b>问题状态：</b>{{ send_first_list.status_txt || '--' }}</p>
 		<p><b>审核意见：</b>{{ send_first_list.remarks || '--' }}</p>
+		<p><b>是否发布：</b>{{ send_first_list.is_release_txt || '--' }}</p>
 		<p><b>问题内容：</b>{{ send_first_list.content || '--' }}</p>
 		<div v-if="!!send_first_list.answer">
 			<b>问题答案：</b>
@@ -12,6 +13,7 @@
 			<p><b>问题类型：</b>{{ send_second_list.type_txt || '--' }}</p>
 			<p><b>问题状态：</b>{{ send_second_list.status_txt || '--' }}</p>
 			<p><b>审核意见：</b>{{ send_second_list.remarks || '--' }}</p>
+			<p><b>是否发布：</b>{{ send_second_list.is_release_txt || '--' }}</p>
 			<p><b>问题内容：</b>{{ send_second_list.content || '--' }}</p>
 			<div v-if="!!send_second_list.answer">
 				<b>问题答案：</b>

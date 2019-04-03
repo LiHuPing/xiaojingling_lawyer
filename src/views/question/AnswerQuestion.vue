@@ -85,26 +85,27 @@
 					this.toastError('请填写回答内容')
 					return
 				}
-				
-				this.$vux.loading.show({
-					text: '提交中'
-				})
-				this.fetchCommon({
-					url: '/inquiry/answer/',
-					data: { in_id, answer },
-					onSuccess: (res) => {
-						this.$vux.loading.hide()
-						this.toastInfo('提交成功')
-						setTimeout(() => {
-							this.$router.push({ path: '/' })
-						}, 1500)
-					},
-					onFail: (error) => {
-						this.$vux.loading.hide()
-						this.toastError(error.msg)
-					},
-					router: this.$router
-				})
+				if( confirm('确认提交答案吗？') ){
+					this.$vux.loading.show({
+						text: '提交中'
+					})
+					this.fetchCommon({
+						url: '/inquiry/answer/',
+						data: { in_id, answer },
+						onSuccess: (res) => {
+							this.$vux.loading.hide()
+							this.toastInfo('提交成功')
+							setTimeout(() => {
+								this.$router.push({ path: '/' })
+							}, 1500)
+						},
+						onFail: (error) => {
+							this.$vux.loading.hide()
+							this.toastError(error.data)
+						},
+						router: this.$router
+					})
+				}
 			},
 			
 			getQiniuToken(){

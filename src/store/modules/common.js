@@ -6,7 +6,8 @@ export const common = {
     inquiryDetail: {
 			send_first_list: {},
 			send_second_list: {}
-		}
+		},
+		qiniuToken: {}
   },
   mutations: commonMutation,
   actions: commonAction
